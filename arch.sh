@@ -64,6 +64,7 @@ PKGS=(
       'gnome-settings-daemon'
       'gnome-shell'
       'gnome-shell-extensions'
+      'gnome-software'
       'gnome-text-editor'
       'gnome-tweaks'
       'tecla'
@@ -86,8 +87,14 @@ echo
 
 PKGS=(
       'git'
+      'nano'
       'alacritty'
       'fish'
+      'podman'
+      'distrobox'
+      'boxbuddy'
+      'timeshift'
+      'flatpak'
 )
 
 for PKG in "${PKGS[@]}"; do
