@@ -54,6 +54,7 @@ echo
 PKGS=(
       'baobab'
       'gdm'
+      'gnome-backgrounds'
       'gnome-control-center'
       'gnome-disk-utility'
       'gnome-font-viewer'
@@ -66,7 +67,6 @@ PKGS=(
       'gnome-text-editor'
       'gnome-tweaks'
       'tecla'
-      'totem'
       'xdg-desktop-portal-gnome'
       'xdg-user-dirs-gtk'
 )
@@ -87,7 +87,6 @@ echo
 PKGS=(
       'git'
       'alacritty'
-      'librewolf-bin'
       'fish'
 )
 
@@ -98,8 +97,23 @@ done
 echo "Sucess"
 
 git clone http://aur.archlinux.org/yay.git
-/yay/makepkg -si
+cd /yay
+makepkg -si
 yay -Syu
+
+
+echo
+echo "INSTALLING from AUR (YAY)"
+echo
+PKGS=(
+      'librewolf-bin'
+)
+
+for PKG in "${PKGS[@]}"; do
+    echo "INSTALLING: ${PKG}"
+    yay -S "$PKG"
+done
+echo "Sucess"
 
 echo
 echo "Done!"
